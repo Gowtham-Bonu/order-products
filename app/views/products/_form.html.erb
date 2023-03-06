@@ -1,0 +1,31 @@
+<%= form_with model: product do |form| %>
+<div class="card container" >
+  <div class="card-body" >
+     <div class="mb-3" >
+        <%= form.label :title, {class: "form-label"} %><br>
+        <%= form.text_field :title, {class: "form-control", placeholder: "Title"}  %>
+        <% product.errors.full_messages_for(:title).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+     </div>
+     <div class="mb-3" >
+        <%= form.label :description, {class: "form-label"} %><br>
+        <%= form.text_field :description, {class: "form-control", placeholder: "Description"}  %>
+     </div>
+      <div class="mb-3" >
+         <%= form.label :cost, {class: "form-label"} %><br>
+         <%= form.number_field :cost, {class: "form-control", placeholder: "cost"}  %>
+         <% product.errors.full_messages_for(:cost).each do |message| %>
+         <div><%= message %></div>
+         <% end %>
+      </div>
+     <div class="mb-3" >
+        <%= form.label :brand, {class: "form-label"} %><br>
+        <%= form.text_field :brand, {class: "form-control", placeholder: "Brand"}  %>
+     </div>
+      <div>
+         <%= form.submit %>
+      </div>
+   </div>
+</div>
+<% end %>

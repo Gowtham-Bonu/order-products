@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   namespace :api do
     namespace :v1 do
-      resource :verifications, only: :show, controller: 'app/api/v1/verifications'
+      resource :verifications, only: :show
     end
   end
 end

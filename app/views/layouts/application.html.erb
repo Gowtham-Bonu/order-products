@@ -17,6 +17,11 @@
       <div><%= link_to "customers", business_customers_path %></div>
       <div><%= link_to "verification", api_v1_verifications_path	 %></div>
     </nav>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

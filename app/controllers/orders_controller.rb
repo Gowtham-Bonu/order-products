@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :get_order, only: [:edit, :update, :destroy]
 
   def index
-    @products = Product.all
+    @order = Order.all
   end
 
   def show; end

@@ -1,0 +1,21 @@
+<table class="table table-dark table-striped" >
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Status</th>
+      <th>Quantity</th>
+      <th colspan="2" >Action</th>
+    </tr>  
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.status %></td>
+        <td><%= order.quantity %></td>
+        <td><button class=" btn btn-light"><%= link_to "edit", edit_product_order_path(@product, order) %></button></td>
+        <td><button class="delete  btn btn-light"><%= link_to "Destroy", product_order_path(@product, order), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
